@@ -7,15 +7,40 @@ let Addbtn = document.getElementById("add-item")
 const newitem = document.getElementById("item")
 const listItems = document.getElementsByTagName('li')
 
-
+inp.addEventListener('keydown', (event) => {
+    if (inp.value == " ") {
+        alert("kindly enter an ingrediant")
+    }
+    if (event.defaultPrevented) {
+        return;
+    }
+    if (event.key == "Enter") {
+        let item = document.createElement('li')
+        let livtext = document.createTextNode(inp.value)
+        item.appendChild(livtext)
+        newitem.appendChild(item);
+    
+        inp.value = " ";
+    }
+    else {
+        return;
+    }
+    event.preventDefault();
+})
 
 Addbtn.addEventListener('click', () => {
-    let item = document.createElement('li')
-    let livtext = document.createTextNode(inp.value)
-    item.appendChild(livtext)
-    newitem.appendChild(item);
-   
-    inp.value = " ";
+    if (inp.value == " ") {
+        alert("kindly enter an ingrediant")
+    }
+    else {
+        let item = document.createElement('li')
+        let livtext = document.createTextNode(inp.value)
+        item.appendChild(livtext)
+        newitem.appendChild(item);
+    
+        inp.value = " ";
+    }
+    
 })
 
 
@@ -52,15 +77,22 @@ btn.addEventListener('click', () => {
         messages: [
             {
                 role: "user",
-                content: `${allitems}`,
+                content:`
+                create a recipe in form of marked text using 
+                ${allitems}
+                format is: Ingrediants(bullet points)
+                Instructions(bullet points)
+                Notes (bullet points)
+                Nutrition (bullet points)
+                Hope you enjoy the *recipie name
+                `,
             },
         ],
         
         model: "openai/gpt-oss-120b:together",
     }).then((response) => {
-        // console.log(JSON.stringify(response));
         console.log(response)
-        outp.textContent = response.choices[0].message.content
+        outp.innerHTML = marked.parse(response.choices[0].message.content)
     });
 })
 

@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Giest';
+}
+
+
+.container {
+    height: fit-content;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+
+    background-color: #FFDBB5;
+}
+.top-border {
+    background-color: #603F26;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 468px;
+    height: 60px;
+    padding: 24px 16px;
+}
+.navbar {
+    display: flex;
+    width: 468px;
+    padding: 16px;
+    align-items: center;
+    background-color: #6C4E31;
+    justify-content: flex-start;
+}
+#text-inp {
+    flex-grow: 4;
+    height: 38px;
+}
+.content {
+    background-color: #FFEAC5;
+}

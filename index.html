@@ -4,21 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ChefClaude</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div>
-        <textarea id="text-inp" placeholder="enter ingrediants here"></textarea>
-        <button id="add-item">Add</button>
-        <button id="call-model">Generate</button>
-        <ul id="item">
 
-        </ul>
-        <p id="text-output"></p>
+    <div class="container">
+        <div class="top-border">
+            <h1>ChefClaude</h1>
+        </div>
+        <div class="navbar">
+            <textarea id="text-inp" placeholder="enter ingrediants here"></textarea>
+            <button id="add-item">Add</button>
+            <button id="call-model">Generate</button>
+        </div>
+        <div class="content">
+            <ul id="item">
+
+            </ul>
+            <p id="text-output"></p>
+        </div>
+
     </div>
 </body>
 
-<script type="module" src="./myscript.js"></script>
+<script src="myscript.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
 
 </html>
