@@ -11,16 +11,21 @@ inp.addEventListener('keydown', (event) => {
     if (inp.value == " ") {
         alert("kindly enter an ingrediant")
     }
-    if (event.defaultPrevented) {
+    if (event.defaultPrevented()) {
         return;
     }
     if (event.key == "Enter") {
-        let item = document.createElement('li')
-        let livtext = document.createTextNode(inp.value)
-        item.appendChild(livtext)
-        newitem.appendChild(item);
-    
-        inp.value = " ";
+        if (inp.value == " ") {
+            alert("kindly enter an ingrediant")
+        }
+        else {
+            let item = document.createElement('li')
+            let livtext = document.createTextNode(inp.value)
+            item.appendChild(livtext)
+            newitem.appendChild(item);
+        
+            inp.value = " ";
+        }  
     }
     else {
         return;
