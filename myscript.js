@@ -52,10 +52,7 @@ btn.addEventListener('click', () => {
         messages: [
             {
                 role: "user",
-                content: `
-                ${allitems}
-                
-                `,
+                content: `${allitems}`,
             },
         ],
         
