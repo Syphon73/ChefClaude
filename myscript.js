@@ -53,7 +53,7 @@ btn.addEventListener('click', () => {
             {
                 role: "user",
                 content: `
-                in 120 words make a recipie from ${allitems}
+                ${allitems}
                 
                 `,
             },
